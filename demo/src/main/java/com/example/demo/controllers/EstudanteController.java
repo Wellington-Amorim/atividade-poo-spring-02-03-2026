@@ -34,4 +34,8 @@ public class EstudanteController {
         return  estudanteServece.criarEstudante(estudanteModel);
     }
 
+    public EstudanteModel atualizar (@PathVariable Long id,@RequestBody EstudanteModel estudanteModel) {
+        return estudanteServece.atualizar(id, estudanteModel);
+    }
+
 }
