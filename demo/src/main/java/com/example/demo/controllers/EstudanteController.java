@@ -37,7 +37,7 @@ public class EstudanteController {
     @PostMapping
     public ResponseEntity<EstudanteModel> criarEstudante(@RequestBody EstudanteModel estudanteModel){
         EstudanteModel requeste = estudanteServece.criarEstudante(estudanteModel);
-        URI uri = ServletUriComponentsBuilder.fromRequestUri(
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(estudanteModel.getId()).toUri();
         )
         return  ResponseEntity.created(uri).body(requeste);
